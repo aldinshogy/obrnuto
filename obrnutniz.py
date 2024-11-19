@@ -2,14 +2,17 @@ import re
 import streamlit as st
 
 def reverse_list():
-    user_input = input("Unesite elemente liste odvojene zarezima (npr. 'Nema, Win 95, Win 98, Win 2000'): ")
+    # Unos korisnika
+    user_input = input("Unesite elemente liste odvojene zarezima (npr. 'Nema,Win 95,Win 98,Win 2000'): ")
     
-
+    # Pretvaranje unosa u listu bez razmaka
     original_list = [element.strip() for element in user_input.split(',')]
- 
+    
+    # Obrnuti redoslijed liste
     reversed_list = original_list[::-1]
-   
-    print("Obrnuti redoslijed elemenata liste je:", reversed_list)
+    
+    # Prikaz rezultata bez razmaka u izlazu
+    print("Obrnuti redoslijed elemenata liste je: " + ",".join(reversed_list))
 
-
+# Poziv funkcije
 reverse_list()
